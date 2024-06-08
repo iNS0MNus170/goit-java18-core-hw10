@@ -47,7 +47,7 @@ public class WordFrequencyCounter {
                 }
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return wordsList.toArray(new String[0]);
     }

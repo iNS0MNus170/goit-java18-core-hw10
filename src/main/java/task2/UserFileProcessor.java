@@ -20,10 +20,8 @@ public class UserFileProcessor {
                 int userAge = Integer.parseInt(user[1]);
                 userList.add(new User(userName, userAge));
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return userList;
     }
@@ -36,7 +34,7 @@ public class UserFileProcessor {
             String json = gson.toJson(userList);
             writer.write(json);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
